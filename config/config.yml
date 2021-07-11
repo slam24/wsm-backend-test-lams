@@ -1,0 +1,17 @@
+# app/config/config.yml
+doctrine_mongodb:
+    default_database: hello_%kernel.environment%
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options: {}
+    document_managers:
+        default:
+            mappings:
+                AcmeDemoBundle: ~
+            metadata_cache_driver:
+                type: memcache
+                class: Doctrine\Common\Cache\MemcacheCache
+                host: localhost
+                port: 11211
+                instance_class: Memcache
